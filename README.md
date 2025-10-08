@@ -47,7 +47,10 @@ Vérifie que le conteneur tourne correctement :
 ```
 docker ps
 ```
-
+Arrête les containers définis dans ton docker-compose.yml : 
+```
+docker-compose down
+```
 # 🚀 Démarrage du projet
 ## 🧠 Lancer le backend (Spring Boot)
 
@@ -76,4 +79,5 @@ npm run serve
 ### 👉 Accès : http://localhost:3000
 
 # full-stack-java-vue
+
 # full-stack-java-vue
