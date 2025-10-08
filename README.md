@@ -117,3 +117,4 @@ Le fichier JAR final sera créé dans le dossier `target/`.
 # full-stack-java-vue
 # full-stack-java-vue
 # full-stack-java-vue
+# full-stack-java-vue
