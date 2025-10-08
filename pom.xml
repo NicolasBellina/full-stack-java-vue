@@ -16,8 +16,8 @@
 
     <properties>
         <java.version>11</java.version>
-        <node.version>v10.15.0</node.version>
-        <npm.version>6.14.3</npm.version>
+        <node.version>v16.20.0</node.version>
+        <npm.version>8.19.4</npm.version>
     </properties>
 
     <dependencies>
@@ -50,11 +50,19 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>dev.danvega.Application</mainClass>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
-                <version>1.7.6</version>
+                <version>1.12.1</version>
+                <configuration>
+                    <skip>true</skip>
+                    <nodeVersion>${node.version}</nodeVersion>
+                    <workingDirectory>src/frontend</workingDirectory>
+                </configuration>
 
                 <executions>
                     <execution>
@@ -63,10 +71,6 @@
                             <goal>install-node-and-npm</goal>
                         </goals>
                         <phase>generate-resources</phase>
-                        <configuration>
-                            <nodeVersion>${node.version}</nodeVersion>
-                            <npmVersion>${npm.version}</npmVersion>
-                        </configuration>
                     </execution>
 
                     <execution>
@@ -91,11 +95,6 @@
                         </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <nodeVersion>${node.version}</nodeVersion>
-                    <workingDirectory>src/frontend</workingDirectory>
-                </configuration>
-
             </plugin>
 
             <plugin>
