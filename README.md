@@ -103,7 +103,7 @@ git checkout main
 ```
 git pull origin main
 ```
-👉 Sert à récupérer et intégrer les dernières modifications de la branche main.
+👉 Sert à récupérer et intégrer les dernières modifications de la branche main (équipe).
 
 ## 5️⃣ Fusionner ta branche dans main
 
@@ -117,8 +117,12 @@ git merge feature/V1
 ```
 git push origin main
 ```
+👉 Pousse le contenu sur la branche main
 ## 7️⃣ Vérifier la synchro (équipe)
 ```
 git pull origin main
 ```
+👉 Sert à récupérer et intégrer les dernières modifications de la branche main (équipe).
+
+
 # full-stack-java-vue
