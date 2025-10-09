@@ -78,4 +78,31 @@ npm run serve
 
 ### 👉 Accès : http://localhost:3000
 
+# 🪾 Fusion et branches: 
+## 1️⃣ Création de branche : 
+```
+git checkout -b feature/V1
+```
+👉 Cette commande crées une nouvelle branche.
+
+## 2️⃣ Push les modifications :
+```
+git add .
+git commit -m 'nom-du-commit'
+git push
+```
+
+## 3️⃣ Va sur la branche main :
+```
+git checkout main
+```
+👉 Tu dois te placer sur la branche qui va recevoir les modifications
+
+## 4️⃣ Mets-la à jour 
+
+```
+git pull origin main
+```
+👉 Sert à récupérer et intégrer les dernières modifications de la branche main.
+
 # full-stack-java-vue
