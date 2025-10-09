@@ -98,7 +98,7 @@ git checkout main
 ```
 👉 Tu dois te placer sur la branche qui va recevoir les modifications
 
-## 4️⃣ Mets-la à jour 
+## 4️⃣ Mets-la à jour (équipe)
 
 ```
 git pull origin main
@@ -117,5 +117,8 @@ git merge feature/V1
 ```
 git push origin main
 ```
-
+## 7️⃣ Vérifier la synchro (équipe)
+```
+git pull origin main
+```
 # full-stack-java-vue
