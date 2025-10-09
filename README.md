@@ -79,5 +79,3 @@ npm run serve
 ### 👉 Accès : http://localhost:3000
 
 # full-stack-java-vue
-
-# full-stack-java-vue
