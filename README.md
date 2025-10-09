@@ -5,7 +5,7 @@
 ```yaml
 services:
   postgres:
-    image: postgres:15
+    image: postgres
     container_name: my_postgres
     environment:
       POSTGRES_USER: myuser
