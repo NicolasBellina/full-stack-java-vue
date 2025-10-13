@@ -12,6 +12,9 @@ public class MessageController {
     public String hello() {
         return "Full Stack Java with Spring Boot and VueJS!";
     }
+
+    @GetMapping("/bye")
+    public String bye() {
+        return "Goodbye from Spring Boot!";
+    }
 }
-
-
