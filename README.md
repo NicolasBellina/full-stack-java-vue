@@ -63,7 +63,7 @@ Depuis la racine du projet :
 
 Endpoint de test :
 ```
-GET http://localhost:8080/api
+GET @
 ```
 
 ## 💻 Lancer le frontend (Vue.js)

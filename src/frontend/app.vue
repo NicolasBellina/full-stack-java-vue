@@ -9,6 +9,6 @@
 </script>
 
 <style>
-/* Global styles can also live in assets/css/main.css */
+/* Global styles caén also live in assets/css/main.css */
 </style>
 

@@ -19,6 +19,8 @@
 </template>
 
 <script setup lang="ts">
-const { data: datahello, pending: pendingHello, error: errorHello } = await useFetch<string>('/api/messages/hello')
-const { data: databye, pending: pendingBye, error: errorBye } = await useFetch<string>('/api/messages/bye')
+const config = useRuntimeConfig()
+const apiBase = config.public.apiBase as string
+const { data: datahello, pending: pendingHello, error: errorHello } = await useFetch<string>('/api/messages/hello', { baseURL: apiBase })
+const { data: databye, pending: pendingBye, error: errorBye } = await useFetch<string>('/api/messages/bye', { baseURL: apiBase })
 </script>

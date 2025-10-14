@@ -1,17 +1,30 @@
-import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
-    modules: ['@nuxt/ui'],
-    css: ['~/assets/css/main.css'],
-    postcss: {
-        plugins: {
-            tailwindcss: {},
-            autoprefixer: {}
+    runtimeConfig: {
+        public: {
+            apiBase: 'http://localhost:8080'
         }
     },
-    compatibilityDate: '2025-10-10',
-    // Proxy fiable via Nitro: redirige /api/** vers le backend en dev
     routeRules: {
-        '/api/**': { proxy: 'http://localhost:8080/api/**' }
+        '/api/**': {
+            proxy: 'http://localhost:8080'
+        }
+    },
+    vite: {
+        server: {
+            proxy: {
+                '/api': {
+                    target: 'http://localhost:8080',
+                    changeOrigin: true
+                }
+            }
+        }
+    },
+    nitro: {
+        devProxy: {
+            '/api/': {
+                target: 'http://localhost:8080',
+                changeOrigin: true
+            }
+        }
     }
 })
-// No implementation needed here - defineNuxtConfig is provided by Nuxt
