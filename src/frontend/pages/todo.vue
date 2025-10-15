@@ -1,7 +1,7 @@
 <template>
-    <div class="p-6 space-y-6">
+  <div class="pt-32 p-6 space-y-6">
     <div>
-      <h2 class="text-xl font-semibold mb-4">Todos</h2>
+      <h2 class="text-xl font-semibold mb-4"></h2>
 
       <form class="flex gap-2 mb-4" @submit.prevent="addTodo">
         <input
@@ -40,14 +40,11 @@ type Todo = {
   completed: boolean
 }
 
-// Messages
-const config = useRuntimeConfig()
-const apiBase = config.public.apiBase as string
-const { data: datahello, pending: pendingHello, error: errorHello } = await useFetch<string>('/api/messages/hello', { baseURL: apiBase })
-const { data: databye, pending: pendingBye, error: errorBye } = await useFetch<string>('/api/messages/bye', { baseURL: apiBase })
-
-// Todos
-const { data: todos, pending: todosPending, error: todosError, refresh } = await useFetch<Todo[]>('/api/todo', { baseURL: apiBase })
+// Todos (chargement côté client pour éviter le cache SSR)
+const { data: todos, pending: todosPending, error: todosError, refresh } = await useFetch<Todo[]>(
+  '/api/todo',
+  { server: false, immediate: true }
+)
 
 const newTitle = ref('')
 const adding = ref(false)
@@ -59,10 +56,10 @@ async function addTodo() {
   try {
     adding.value = true
     await $fetch('/api/todo', {
-      method: 'POST',
-      body: { title, completed: false },
-      baseURL: apiBase
-    })
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: { title, completed: false }
+})
     newTitle.value = ''
     await refresh()
   } finally {
@@ -72,10 +69,12 @@ async function addTodo() {
 
 async function toggleCompleted(todo: Todo) {
   try {
-    await $fetch(`/api/todo/${todo.id}`, {
+    await fetch(`/api/todo/${todo.id}`, {
       method: 'PUT',
-      body: { ...todo, completed: !todo.completed },
-      baseURL: apiBase
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ ...todo, completed: !todo.completed }),
     })
     await refresh()
   } catch (e) {
@@ -85,10 +84,12 @@ async function toggleCompleted(todo: Todo) {
 async function removeTodo(todo: Todo) {
   try {
     removingIds.value.add(todo.id)
-    await $fetch(`/api/todo/${todo.id}`, { method: 'DELETE', baseURL: apiBase })
+    await fetch(`/api/todo/${todo.id}`, { method: 'DELETE' })
     await refresh()
   } finally {
     removingIds.value.delete(todo.id)
   }
 }
+
 </script>
+
