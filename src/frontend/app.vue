@@ -2,7 +2,5 @@
   <UApp>
   <HeaderComponents/>
     <NuxtPage />
-
   </UApp>
-
 </template>

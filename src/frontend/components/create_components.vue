@@ -49,7 +49,7 @@
       </form>
 
       <p class="mt-6 text-center text-sm/6 text-gray-400">
-        Vous avez déjà un compte ?
+        Do you already have an account ?
         <a href="/login" class="font-semibold text-indigo-400 hover:text-indigo-300">Connexion</a>
       </p>
     </div>
