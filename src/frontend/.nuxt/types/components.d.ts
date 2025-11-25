@@ -14,10 +14,7 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 interface _GlobalComponents {
-  'CreateComponents': typeof import("../../components/create_components.vue")['default']
-  'ForgotComponents': typeof import("../../components/forgot_components.vue")['default']
-  'HeaderComponents': typeof import("../../components/header_components.vue")['default']
-  'LoginComponents': typeof import("../../components/login_components.vue")['default']
+  'BaseBackendTest': typeof import("../../components/BaseBackendTest.vue")['default']
   'UAccordion': typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/elements/Accordion.vue")['default']
   'UAlert': typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/elements/Alert.vue")['default']
   'UAvatar': typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/elements/Avatar.vue")['default']
@@ -92,10 +89,7 @@ interface _GlobalComponents {
   'Html': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Html']
   'Body': typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Body']
   'NuxtIsland': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']
-  'LazyCreateComponents': LazyComponent<typeof import("../../components/create_components.vue")['default']>
-  'LazyForgotComponents': LazyComponent<typeof import("../../components/forgot_components.vue")['default']>
-  'LazyHeaderComponents': LazyComponent<typeof import("../../components/header_components.vue")['default']>
-  'LazyLoginComponents': LazyComponent<typeof import("../../components/login_components.vue")['default']>
+  'LazyBaseBackendTest': LazyComponent<typeof import("../../components/BaseBackendTest.vue")['default']>
   'LazyUAccordion': LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/elements/Accordion.vue")['default']>
   'LazyUAlert': LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/elements/Alert.vue")['default']>
   'LazyUAvatar': LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/elements/Avatar.vue")['default']>

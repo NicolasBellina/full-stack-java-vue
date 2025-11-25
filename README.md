@@ -73,7 +73,7 @@ Depuis le dossier frontend :
 ```
 cd src/frontend
 npm install
-npm run serve
+npm run dev
 ```
 
 ### 👉 Accès : http://localhost:3000
